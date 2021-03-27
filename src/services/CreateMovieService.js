@@ -1,7 +1,7 @@
 const Movie = require('../entities/Movie.js');
 
 module.exports = {
-  async create(request, response) {
+  async execute(request, response) {
     try {
       const { title, director, amount } = request.body;
 
@@ -13,7 +13,7 @@ module.exports = {
 
       return response.status(200).json(newMovie);
     } catch (error) {
-      return response.status(400).json(error);
+      throw new Error('Erro inesperado ao cadastrar um filme.');
     }
   },
 };

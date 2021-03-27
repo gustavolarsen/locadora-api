@@ -1,19 +1,32 @@
 const { Router } = require('express');
 
-const createCustomerService = require('./services/CreateCustomerService.js');
-const authCustomerService = require('./services/AuthCustomerService.js');
+const createCustomerService = require('./services/CreateCustomerService');
+const loginCustomerService = require('./services/LoginCustomerService');
+const createMovieService = require('./services/CreateMovieService');
+const availableMovieService = require('./services/AvailableMovieService');
+const rentMovieService = require('./services/RentMovieService');
+const returnMovieService = require('./services/returnMovieService');
 
-const createMovieService = require('./services/CreateMovieService.js');
-const listMovieService = require('./services/ListMovieService.js');
+const { verifyAuthorization } = require('./middlewares/verifyAuthoriozation');
 
 const router = Router();
 
-router.post('/customers', createCustomerService.create);
+router.post('/customers', createCustomerService.execute);
+router.post('/movies', createMovieService.execute);
+router.post('/login', loginCustomerService.execute);
+router.get('/movies', availableMovieService.execute);
 
-router.post('/movies', createMovieService.create);
-router.get('/movies', listMovieService.index);
+router.post(
+  '/movies/rent/:idMovie',
+  verifyAuthorization,
+  rentMovieService.execute
+);
 
-router.post('/login', authCustomerService.auth);
+router.put(
+  '/movies/return/:idMovie',
+  verifyAuthorization,
+  returnMovieService.execute
+);
 
 router.get('/', (request, response) => {
   response.status(200).json({ ok: true });

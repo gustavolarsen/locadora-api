@@ -13,7 +13,7 @@ app.use(router);
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`);
+    console.log(`🚀 Servidor rodando na porta ${port}`);
   });
 }
 
