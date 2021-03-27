@@ -11,7 +11,7 @@ module.exports = {
         amount,
       });
 
-      return response.status(200).json(newMovie);
+      return response.status(200).send(newMovie);
     } catch (error) {
       throw new Error('Erro inesperado ao cadastrar um filme.');
     }

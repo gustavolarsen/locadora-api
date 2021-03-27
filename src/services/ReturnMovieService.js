@@ -44,7 +44,7 @@ module.exports = {
 
       return response
         .status(200)
-        .json(`Filme ${movie.title} devolvido com sucesso.`);
+        .send(`Filme ${movie.title} devolvido com sucesso.`);
     } catch {
       throw new Error('Erro inesperado ao devolver o filme.');
     }

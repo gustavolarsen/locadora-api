@@ -29,7 +29,7 @@ router.put(
 );
 
 router.get('/', (request, response) => {
-  response.status(200).json({ ok: true });
+  response.status(200).send({ message: 'API da locadora NodeJS' });
 });
 
 module.exports = { router };

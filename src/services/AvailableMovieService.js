@@ -21,7 +21,7 @@ module.exports = {
             .status(404)
             .send({ message: 'Filme não encontrado.' });
 
-        return response.status(200).json(movieByTitle);
+        return response.status(200).send(movieByTitle);
       } else {
         //se usuario NÃO informou filtro de titulo retorna a lista completa de
         //filmes disponíveis.
@@ -34,7 +34,7 @@ module.exports = {
             .status(404)
             .send({ message: 'Nenhum filme foi encontrado.' });
 
-        return response.status(200).json(movieListAvailable);
+        return response.status(200).send(movieListAvailable);
       }
     } catch {
       throw new Error('Erro inesperado ao consultar filmes disponíveis.');

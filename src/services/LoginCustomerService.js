@@ -9,21 +9,21 @@ module.exports = {
     const customer = await Customer.findOne({ where: { email } });
 
     if (!customer) {
-      return response.status(401).json({ erro: 'Usuário não encontrado' });
+      return response.status(401).send({ erro: 'Usuário não encontrado' });
     }
 
     try {
       const passwordIsValid = await bcrypt.compare(password, customer.password);
 
       if (!passwordIsValid) {
-        return response.status(401).json({ erro: 'Senha incorreta' });
+        return response.status(401).send({ erro: 'Senha incorreta' });
       }
 
       const token = sign({ id: customer.id }, process.env.JWT_SECRET, {
         expiresIn: '24h',
       });
 
-      return response.status(200).json({
+      return response.status(200).send({
         name: customer.name,
         email,
         token,

@@ -36,7 +36,7 @@ module.exports = {
 
       delete newCustomer.password;
 
-      return response.status(200).json(newCustomer);
+      return response.status(200).send(newCustomer);
     } catch {
       throw new Error('Erro inesperado ao cadastrar um cliente.');
     }
