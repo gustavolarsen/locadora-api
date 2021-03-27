@@ -2,8 +2,6 @@
 
 API em node JS para sistema de locadora
 
-<br/>
-
 # 🐬 Configurando banco de dados MySQL
 
 Antes de rodar a API é necessário preparar o banco de dados.
@@ -13,8 +11,6 @@ No MySQL, rode os scripts de criação das bases e das tabelas necessárias, que
 - Para criar a base de desenvolvimento rode o script `SQL_CREATE_TABLES_locadoradb.sql`
 
 - Para criar a base de testes itegrados rode o script `SQL_CREATE_TABLES_locadoradb_test.sql`´
-
-<br/>
 
 # 🔨 Configurando a API em ambiente de DSV
 
@@ -28,8 +24,6 @@ $ cd locadora-api
 # Instale as dependencias
 $ yarn install
 ```
-
-<br/>
 
 # 📁 Configuração dos arquivos de ambiente
 
@@ -59,8 +53,6 @@ DB_PORT=3306
 JWT_SECRET=seutokensecreto
 ```
 
-<br/>
-
 # 🔍 Rodando os testes integrados e unitários
 
 ```bash
@@ -70,8 +62,6 @@ $ cd locadora-api
 # Rode os testes
 $ jest
 ```
-
-<br/>
 
 # 🔥 Rodando a API em DSV
 
@@ -83,19 +73,13 @@ $ cd locadora-api
 $ yarn dev
 ```
 
-<br/>
-
 # 📋 Documentação dos Endpoints
 
 Para detalhes da documentação da API acessar este link [https://app.swaggerhub.com/apis-docs/gustavolarsen/swagger-locadora/1.0.0](https://app.swaggerhub.com/apis-docs/gustavolarsen/swagger-locadora/1.0.0)
 
-<br/>
-
 # 👩🏼‍🦲 Autor
 
 API desenvolvida por Gustavo Larsen
-
-<br/>
 
 # 📃 Licença
 
